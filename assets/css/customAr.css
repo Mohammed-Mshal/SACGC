@@ -1,0 +1,43 @@
+* {
+  font-family: "Almarai", sans-serif;
+}
+
+nav .container .options .toggle-language {
+  font-family: "FONTSPRING DEMO - Cera Pro";
+}
+.home-banner .swiper-slide .bg-slide::before {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 40.14%,
+    #ffffff 100%
+  );
+}
+nav .popup-menu .list-menu li .inner-list .item-inner:not(:last-child)::after {
+  right: auto;
+  left: -20px;
+}
+
+.home-banner .list-social {
+  right: auto;
+  left: 31px;
+}
+
+.home-banner .navigation button img {
+  rotate: 180deg;
+}
+.home-banner .swiper-slide .container .content-slide .subtitle-banner{
+  translate: 200px 0;
+}
+@media (max-width: 992px) {
+  .home-banner .list-social {
+    left: 15px;
+  }
+}
+@media (max-width: 668px) {
+  .home-banner .list-social {
+    right: auto;
+    left: 50%;
+  }
+}
+
+
