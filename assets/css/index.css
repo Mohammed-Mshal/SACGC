@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap");
+
 :root {
   --color-primary: #000000;
   --color-secondary: #ffffff;
@@ -12,14 +14,151 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "FONTSPRING DEMO - Cera Pro", sans-serif;
+  font-family: "FONTSPRING DEMO - Cera Pro";
   color: var(--color-text);
 }
 
 .bold-word {
   font-weight: 700;
 }
+/* Navbar */
+nav {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  max-width: 100%;
+}
+nav .wrapper-nav {
+  width: 100%;
+  max-width: calc(100% - 38px);
+  display: flex;
+  justify-content: center;
+}
+nav .container {
+  padding: 8px 40px 18px;
+  max-width: 1700px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffffd9;
+  backdrop-filter: blur(104px);
+  box-shadow: 0px 2px 22px 0px #00000026;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+nav .container .logo {
+  max-width: 137px;
+  max-height: 70px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+nav .container .logo img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+nav .container .wrapper-links {
+}
+nav .container .wrapper-links ul {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+nav .container .wrapper-links ul a {
+  text-decoration: none;
+  font-size: clamp(14px, 1.6vw, 17px);
+  color: #000;
+  font-weight: 500;
+  position: relative;
+}
+nav .container .wrapper-links ul a::before {
+  content: "";
+  height: 1px;
+  width: 0px;
+  position: absolute;
+  left: 50%;
+  translate: -50% 0;
+  bottom: -10px;
+  background-color: #000;
+  transition: 0.3s all ease-out;
+}
+nav .container .wrapper-links ul a:hover::before {
+  width: 100%;
+}
+nav .container .options {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 
+nav .container .options .toggle-language {
+  text-decoration: none;
+}
+
+html[dir="ltr"] nav .container .options .toggle-language {
+  font-family: "Almarai", sans-serif;
+}
+html[dir="rtl"] nav .container .options .toggle-language {
+  font-family: "FONTSPRING DEMO - Cera Pro";
+}
+nav .container .options button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+nav .container .options .wrapper-menu {
+}
+nav .popup-menu {
+  position: fixed;
+  left: -0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  z-index: 1000;
+}
+nav .popup-menu .close-button {
+  position: fixed;
+  top: 50px;
+  right: 20px;
+  transition: 0.3s all ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+nav .popup-menu .close-button:hover {
+  scale: 1.2;
+}
+
+nav .popup-menu .list-menu {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  text-align: center;
+}
+nav .popup-menu .list-menu  a{
+  font-size: clamp(16px, 2.4vw, 25px);
+  text-decoration: none;
+  font-weight: 700;
+
+}
+nav .popup-menu .list-social{
+  position: fixed;
+  bottom: 20px;
+}
 /* Home Banner */
 .home-banner {
   position: relative;
@@ -86,9 +225,11 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(270deg,
-      rgba(255, 255, 255, 0) 40.14%,
-      #ffffff 100%);
+  background: linear-gradient(
+    270deg,
+    rgba(255, 255, 255, 0) 40.14%,
+    #ffffff 100%
+  );
   z-index: 1;
 }
 
@@ -173,7 +314,12 @@
   position: relative;
 }
 
-.home-banner .swiper-slide .container .content-slide .btn-explore .icon-play:before {
+.home-banner
+  .swiper-slide
+  .container
+  .content-slide
+  .btn-explore
+  .icon-play:before {
   content: "";
   position: absolute;
   top: 50%;
@@ -187,23 +333,40 @@
   z-index: -1;
 }
 
-.home-banner .swiper-slide .container .content-slide .btn-explore:hover .icon-play:before {
+.home-banner
+  .swiper-slide
+  .container
+  .content-slide
+  .btn-explore:hover
+  .icon-play:before {
   width: 30vw;
   height: 30vw;
 }
 
-.home-banner .swiper-slide.swiper-slide-active .container .content-slide .subtitle-banner {
+.home-banner
+  .swiper-slide.swiper-slide-active
+  .container
+  .content-slide
+  .subtitle-banner {
   opacity: 1;
   translate: 0 0;
 }
 
-.home-banner .swiper-slide.swiper-slide-active .container .content-slide .title-banner {
+.home-banner
+  .swiper-slide.swiper-slide-active
+  .container
+  .content-slide
+  .title-banner {
   opacity: 1;
   scale: 1;
   translate: 0 0;
 }
 
-.home-banner .swiper-slide.swiper-slide-active .container .content-slide .btn-explore {
+.home-banner
+  .swiper-slide.swiper-slide-active
+  .container
+  .content-slide
+  .btn-explore {
   opacity: 1;
   translate: 0 0;
 }
@@ -225,12 +388,11 @@
 .home-banner .navigation {
   display: flex;
   gap: 18px;
-
 }
 
 .home-banner .navigation button {
   border-radius: 50%;
-  border: 2.06px solid #292D32;
+  border: 2.06px solid #292d32;
   width: 36px;
   height: 36px;
   background-color: transparent;
@@ -238,11 +400,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: .3s background ease-in-out;
+  transition: 0.3s background ease-in-out;
   cursor: pointer;
 }
 
-.home-banner .navigation button img{
+.home-banner .navigation button img {
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -250,13 +412,11 @@
 
 .home-banner .navigation button:hover {
   background-color: #000;
-
 }
 
 .home-banner .navigation button:hover img {
   filter: brightness(10);
 }
-
 
 .home-banner .swiper-controls .pagination {
   position: static;
@@ -267,7 +427,7 @@
 
 .home-banner .swiper-controls .pagination .swiper-pagination-bullet {
   background: #000;
-  opacity: .44;
+  opacity: 0.44;
 }
 
 .home-banner .swiper-controls .pagination .swiper-pagination-bullet-active {
@@ -290,7 +450,6 @@
   .home-banner .swiper-controls .pagination,
   .home-banner .swiper-controls .navigation {
     justify-content: center;
-
   }
 
   .home-banner .swiper-slide .container .content-slide {
