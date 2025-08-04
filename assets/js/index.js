@@ -18,4 +18,22 @@ document.addEventListener('DOMContentLoaded', () => {
             },
         })
     }
+    const menu = document.querySelector('nav .popup-menu')
+    const closeMenu = document.querySelector('nav .popup-menu .close-button')
+    const toggleMenu = document.querySelector('nav .options .toggle-menu')
+    const toggleInnerList = document.querySelectorAll('nav .popup-menu .list-menu li .toggle-inner-list')
+    toggleMenu.addEventListener('click', () => {
+        menu.classList.add('show')
+    })
+    closeMenu.addEventListener('click', () => {
+        menu.classList.remove('show')
+        toggleInnerList.forEach((e) => e.classList.remove('show'))
+
+    })
+    toggleInnerList.forEach((btn) => {
+        btn.addEventListener('click', () => {
+            toggleInnerList.forEach((e) => e.classList.remove('show'))
+            btn.classList.add('show')
+        })
+    })
 })
