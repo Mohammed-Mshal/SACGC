@@ -28,12 +28,22 @@ document.addEventListener('DOMContentLoaded', () => {
     closeMenu.addEventListener('click', () => {
         menu.classList.remove('show')
         toggleInnerList.forEach((e) => e.classList.remove('show'))
-
+        
     })
     toggleInnerList.forEach((btn) => {
         btn.addEventListener('click', () => {
             toggleInnerList.forEach((e) => e.classList.remove('show'))
             btn.classList.add('show')
         })
+    })
+    const closeSearch = document.querySelector('nav .search-popup .close-button')
+    const searchPopup = document.querySelector('nav .search-popup')
+    const toggleSearch = document.querySelector('nav .container .options .search-button')
+    toggleSearch.addEventListener('click', () => {
+        searchPopup.classList.add('show')
+    })
+    closeSearch.addEventListener('click', () => {
+        searchPopup.classList.remove('show')
+        
     })
 })

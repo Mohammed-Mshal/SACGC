@@ -3,11 +3,16 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.registerPlugin(ScrollTrigger)
     const socialLinks = document.querySelectorAll('.home-banner .list-social a')
     const tl1 = gsap.timeline()
+    tl1.from('nav .container',{
+        y:-200,
+        opacity:0,
+        delay:1,
+        ease:'power3.inOut'
+    })
     socialLinks.forEach((el, i) => {
         tl1.from((el), {
             scale: 1.5,
             opacity: 0,
-            delay: i === 0 ? 1 : 0,
             duration: .4,
             ease: 'power2.inOut',
             immediateRender: true
